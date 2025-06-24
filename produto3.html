@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<title>Angelbaby - Macacão Urso</title>
+		<link rel="icon" href="imagens/icones/logosemnome.png" type="image/png">
+	</head>
+
+	<body>
+
+		<div id="principal">
+
+<!-- ÍNICIO - MENU PRINCIPAL -->
+			<div id="menu">			
+
+				<div class="links">
+
+					<a href="index.html">
+						<img src="imagens/icones/logosemnome.png" width="60">
+					</a>
+					<a href="index.html">HOME</a>
+					<a href="lojavirtual.html">LOJA VIRTUAL</a>
+					<a href="blog.html">BLOG</a>
+					<a href="sobrenos.html">SOBRE NÓS</a>
+					<a href="login.html">LOGIN</a>
+					
+				</div>
+
+				<div class="contato">
+
+					<a href="carrinho.html">
+					<img class="icones" src="imagens/icones/carrinhosemfundo2.png">
+					</a>
+					<a href="https://wa.me/5585996010146?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos!">
+					<img class="icones" src="imagens/icones/logowppsemfundo.png">
+					</a>
+					<a href="https://www.instagram.com/angellinebabyofc/?__pwa=1">
+					<img class="icones" src="imagens/icones/logoinstagramsemfundo.png">
+					</a>
+
+				</div>
+
+			</div>
+<!-- FIM - MENU PRINCIPAL -->
+
+<!-- INÍCIO - PRODUTO -->
+
+  <div class="produto-container">
+
+    <div class="produto-imagem">
+    	
+    	<div class="zoom-lente" id="zoomArea">
+      	<img id="imagemPrincipal" src="imagens/produtos/macacaourso-azul-frente.png" alt="Nome do Produto">
+      </div>
+
+      <div class="miniatura">
+      	<img src="imagens/produtos/macacaourso-azul-frente.png" alt="Imagem 1" onclick="trocarImagem('imagens/produtos/macacaourso-azul-frente.png')">
+      	<img src="imagens/produtos/macacaourso-azul-costas.png" alt="Imagem 1" onclick="trocarImagem('imagens/produtos/macacaourso-azul-costas.png')">
+      	<img src="imagens/produtos/macacaourso-azul-detalhe1.png" alt="Imagem 1" onclick="trocarImagem('imagens/produtos/macacaourso-azul-detalhe1.png')">
+      	<img src="imagens/produtos/macacaourso-azul-detalhe2.jpg" alt="Imagem 1" onclick="trocarImagem('imagens/produtos/macacaourso-azul-detalhe2.jpg')">
+      </div>
+
+    </div>
+
+    <div class="produto-info">
+      <h1>Macacão Urso</h1>
+      <hr>
+      <p class="preco">R$ 79,90</p>
+      
+
+      <label for="cor"><h4>COR:</h4></label>
+
+      <div class="seletor-cores">
+			  <div class="cor-box" style="background-color: #71b6e7;" onclick="trocarCor('azul')" title="Azul"></div>
+			</div>
+					
+
+				<label for="tamanho"><h4>TAMANHO:</h4></label>
+				<div class="tamanhos">
+				  <input type="radio" id="tam-pp" name="tamanho" value="PP">
+				  <label for="tam-pp">PP</label>
+
+				  <input type="radio" id="tam-p" name="tamanho" value="P">
+				  <label for="tam-p">P</label>
+
+				  <input type="radio" id="tam-m" name="tamanho" value="M">
+				  <label for="tam-m">M</label>
+
+				  <input type="radio" id="tam-g" name="tamanho" value="G">
+				  <label for="tam-g">G</label>
+				</div>
+
+      <p><h4>SOBRE O PRODUTO:</h4> Macacão super confortável, 100% algodão, ideal para os primeiros meses do seu bebê. Disponível nos tamanhos PP, P, M e G.</p>
+
+      <br><br>
+      <button class="botao-comprar">Comprar agora</button>
+    </div>
+  </div>
+
+	  <script>
+	    //INÍCIO -- ALTERAR IMAGEM PRINCIPAL (MINIATURAS)
+	    function trocarImagem(imagemSrc) {
+	      document.getElementById("imagemPrincipal").src = imagemSrc;
+	    }
+	    //FIM -- ALTERAR IMAGEM PRINCIPAL (MINIATURAS)
+
+	    //INÍCIO -- FUNÇÃO ZOOM LUPA
+	    const zoomArea = document.getElementById('zoomArea');
+  		const imagem = document.getElementById('imagemPrincipal');
+
+	  	zoomArea.addEventListener('mousemove', function(e) {
+	    const bounds = zoomArea.getBoundingClientRect();
+	    const x = ((e.clientX - bounds.left) / bounds.width) * 100;
+	    const y = ((e.clientY - bounds.top) / bounds.height) * 100;
+
+	    imagem.style.transformOrigin = `${x}% ${y}%`;
+	    imagem.style.transform = "scale(2)"; // nível de zoom
+	  	});
+
+	  	zoomArea.addEventListener('mouseleave', function() {
+	    imagem.style.transform = "scale(1)";
+	    imagem.style.transformOrigin = "center center";
+	  	});
+	  //FIM -- FUNÇÃO ZOOM LUPA
+
+	  //INÍCIO -- SELETOR DE CORES
+	  	const imagensPorCor = {
+		    azul: [
+		      'imagens/produtos/macacaourso-azul-frente.png',
+		      'imagens/produtos/macacaourso-azul-costas.png',
+		      'imagens/produtos/macacaourso-azul-detalhe1.png',
+		      'imagens/produtos/macacaourso-azul-detalhe2.jpg'
+		    ],
+		    /*caqui: [
+		      'imagens/produtos/suspensorio-caqui-frente.jpg',
+		      'imagens/produtos/suspensorio-caqui-costas.jpg'
+		    ],
+		    branco: [
+		      'imagens/produtos/suspensorio-branco-frente.jpg',
+		      'imagens/produtos/suspensorio-branco-costas.jpg'
+		    ]*/
+  		};
+
+		  function trocarImagem(src) {
+		    document.getElementById("imagemPrincipal").src = src;
+		  }
+
+		  function trocarCor(corSelecionada) {
+		    const imagens = imagensPorCor[corSelecionada];
+		    if (!imagens) return;
+
+		    // Troca imagem principal
+		    trocarImagem(imagens[0]);
+
+		    // Atualiza miniaturas
+		    const miniaturasContainer = document.querySelector(".miniatura");
+		    miniaturasContainer.innerHTML = ''; // limpa miniaturas anteriores
+
+		    imagens.forEach((src) => {
+		      const img = document.createElement("img");
+		      img.src = src;
+		      img.alt = `Imagem - ${corSelecionada}`;
+		      img.onclick = () => trocarImagem(src);
+		      miniaturasContainer.appendChild(img);
+		    });
+		  }
+	  //FIM -- SELETOR DE CORES
+	  </script>
+
+<!-- FIM - PRODUTO -->
+
+<!-- INÍCIO - RODAPÉ -->
+			<div id="rodape">
+				<h4 class="centralizar">TODOS OS DIREITOS RESERVADOS</h4>
+			</div>
+<!-- FIM - RODAPÉ -->
+
+		</div>
+
+	</body>
+</html>
