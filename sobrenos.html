@@ -15,32 +15,64 @@
 <!-- ÍNICIO - MENU PRINCIPAL -->
 			<div id="menu">			
 
-				<div class="links">
+			  <!-- LOGO -->
+			  <a href="index.html" class="logo">
+			    <img src="imagens/icones/logosemnome.png" width="60">
+			  </a>
 
-					<a href="index.html">
-						<img src="imagens/icones/logosemnome.png" width="60">
-					</a>
-					<a href="index.html">HOME</a>
-					<a href="lojavirtual.html">LOJA VIRTUAL</a>
-					<a href="blog.html">BLOG</a>
-					<a href="sobrenos.html" class="ativo">SOBRE NÓS</a>
-					<a href="login.html">LOGIN</a>
-					
+			  <!-- BOTÃO HAMBURGUER (só no celular) -->
+			  <div class="hamburger" onclick="toggleMenu()">
+			    ☰
+			  </div>
+
+			  <!-- MENU COMPLETO -->
+
+			  <!-- MENU NORMAL PARA DESKTOP -->
+				<div class="menu-desktop">
+				    <div class="links">
+					    <a href="index.html">HOME</a>
+					    <a href="lojavirtual.html">LOJA VIRTUAL</a>
+					    <a href="blog.html">BLOG</a>
+					    <a href="sobrenos.html" class="ativo">SOBRE NÓS</a>
+					    <a href="login.html">LOGIN</a>
+				    </div>
+				  	
+				  	<div class="contato">
+				      <a href="carrinho.html">
+				        <img class="icones" src="imagens/icones/carrinhosemfundo2.png">
+				      </a>
+				      <a href="https://wa.me/5585996010146?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos!">
+				        <img class="icones" src="imagens/icones/logowppsemfundo.png">
+				      </a>
+				      <a href="https://www.instagram.com/angellinebabyofc/?__pwa=1">
+				        <img class="icones" src="imagens/icones/logoinstagramsemfundo.png">
+				      </a>
+				    </div>
 				</div>
 
-				<div class="contato">
+			  <!-- MENU MOBILE SOBREPOSTO -->
+			    <div class="menu-mobile" id="menu-mobile">
+				    	<button class="fechar-menu" onclick="toggleMenu()">✕</button>
+				    <div class="links">
+					    <a href="index.html">HOME</a>
+					    <a href="lojavirtual.html">LOJA VIRTUAL</a>
+					    <a href="blog.html">BLOG</a>
+					    <a href="sobrenos.html" class="ativo">SOBRE NÓS</a>
+					    <a href="login.html">LOGIN</a>
+				    </div>
 
-					<a href="carrinho.html">
-					<img class="icones" src="imagens/icones/carrinhosemfundo2.png">
-					</a>
-					<a href="https://wa.me/5585996010146?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos!">
-					<img class="icones" src="imagens/icones/logowppsemfundo.png">
-					</a>
-					<a href="https://www.instagram.com/angellinebabyofc/?__pwa=1">
-					<img class="icones" src="imagens/icones/logoinstagramsemfundo.png">
-					</a>
-
-				</div>
+				    <div class="contato">
+				      <a href="carrinho.html">
+				        <img class="icones" src="imagens/icones/carrinhosemfundo2.png">
+				      </a>
+				      <a href="https://wa.me/5585996010146?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos!">
+				        <img class="icones" src="imagens/icones/logowppsemfundo.png">
+				      </a>
+				      <a href="https://www.instagram.com/angellinebabyofc/?__pwa=1">
+				        <img class="icones" src="imagens/icones/logoinstagramsemfundo.png">
+				      </a>
+				    </div>
+			    </div>
 
 			</div>
 <!-- FIM - MENU PRINCIPAL -->
@@ -77,6 +109,13 @@
 			</div>
 <!-- FIM - RODAPÉ -->
 		</div>
+
+		<script>
+		  function toggleMenu() {
+		    const menu = document.getElementById('menu-mobile');
+		    menu.classList.toggle('show');
+		  }
+		</script>
 
 	</body>
 </html>
